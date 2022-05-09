@@ -5,12 +5,16 @@ const bombsList = [];
 
 while(count !== 16){
     const bombs = Math.floor(Math.random() * 100) + 1;
-    bombsList.push(bombs);
+   
+    // I numeri non possono essere duplicati.  
+   if(!bombsList.includes(bombs)){
+        bombsList.push(bombs);
+    }
     count++
 }
 
 console.log(bombsList);
-// I numeri non possono essere duplicati.
+
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
