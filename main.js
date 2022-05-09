@@ -36,14 +36,13 @@ while (userNumbers.length < 9){
         alert("hai perso")
         bombsList.length = 0   
      // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-        console.log(userNumbers.length);
+        console.log(`${"il tuo puntenggio è:"} ${userNumbers.length}`);
         userNumbers.length = 0
     };
 }
 
+if(userNumbers.length === 9){
+    alert("Hai vinto!!!")
+}
+
 console.log (userNumbers);
-
-//altrimenti si continua chiedendo all’utente un altro numero.
-
-// La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
-// Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
