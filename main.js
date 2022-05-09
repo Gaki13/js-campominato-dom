@@ -1,4 +1,15 @@
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
+let count = 0;
+
+const bombsList = [];
+
+while(count !== 16){
+    const bombs = Math.floor(Math.random() * 100) + 1;
+    bombsList.push(bombs);
+    count++
+}
+
+console.log(bombsList);
 // I numeri non possono essere duplicati.
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
