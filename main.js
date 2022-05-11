@@ -1,16 +1,25 @@
+/*--------------
+    FUNCTIONS
+---------------*/
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+
+  /*--------------
+       MAIN
+---------------*/
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 let count = 0;
 
 const bombsList = [];
 
-while(count !== 16){
-    const bombs = Math.floor(Math.random() * 100) + 1;
+while(bombsList.length < 16){
+    const bombs = getRndInteger(1, 100);
    
     // I numeri non possono essere duplicati.  
    if(!bombsList.includes(bombs)){
         bombsList.push(bombs);
     }
-    count++
 }
 
 console.log(bombsList);
@@ -18,7 +27,9 @@ console.log(bombsList);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 const userNumbers = [];
 
-while (userNumbers.length < 9){
+let gameStatus = false;
+
+while ( gameStatus === false ){
     let num = Number(prompt("Inserrisci un numero tra 1 e 100:"))
     
     // L’utente non può inserire più volte lo stesso numero.
@@ -33,11 +44,10 @@ while (userNumbers.length < 9){
     
     // Se il numero è presente nella lista dei numeri generati, la partita termina
     if (bombsList.includes(num)){
-        alert("hai perso")
-        bombsList.length = 0   
+        gameStatus = true;
+        alert("hai perso")  
      // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
         console.log(`${"il tuo puntenggio è:"} ${userNumbers.length}`);
-        userNumbers.length = 0
     };
 }
 
