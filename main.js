@@ -51,7 +51,7 @@ while ( gameStatus === false ){
     };
 }
 
-if(userNumbers.length === 9){
+if(userNumbers.length === 84){
     alert("Hai vinto!!!")
 }
 
